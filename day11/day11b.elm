@@ -8,8 +8,20 @@ main = text <| toString <| solve input
 
 solve: String -> Int
 solve input =
+  let
+    moves = 
+      input
+      |> String.split ","
+  in
+    List.range 1 (List.length moves)
+    |> List.map (\x -> List.take x moves)
+    |> List.map distance
+    |> List.maximum
+    |> Maybe.withDefault -1
+
+distance: List String -> Int
+distance input =
   input
-  |> String.split ","
   |> histogram
   |> toCoordinates
   |> reduce
