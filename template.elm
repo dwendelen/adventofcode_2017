@@ -59,4 +59,4 @@ toIntOrZero char =
     Ok a ->
       a
     Err _ ->
-      -1
+      0
