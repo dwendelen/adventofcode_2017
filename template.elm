@@ -60,3 +60,9 @@ toIntOrZero char =
       a
     Err _ ->
       0
+
+outerProduct: List a -> List (a, a)
+outerProduct list =
+  List.concatMap (\e ->
+    List.map (\i -> (e, i)) list
+  ) list
