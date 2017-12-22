@@ -66,3 +66,14 @@ outerProduct list =
   List.concatMap (\e ->
     List.map (\i -> (e, i)) list
   ) list
+  
+histogram: List comparable -> Dict comparable Int
+histogram list =
+    List.foldl histo_inc Dict.empty list
+
+histo_inc:  comparable -> Dict comparable Int -> Dict comparable Int
+histo_inc dir dict  =
+    if Dict.member dir dict then
+        Dict.update dir (Maybe.map ((+) 1))  dict
+    else
+        Dict.insert dir 1 dict
