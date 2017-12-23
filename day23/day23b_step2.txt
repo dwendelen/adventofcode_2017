@@ -1,0 +1,34 @@
+b = 108400
+c = 125400
+
+while(true) {
+    f = 1
+    
+    d = 2
+    do {
+        e = 2
+        do {
+            g = d
+            g = g * e
+            g = g - b
+            if g == 0 {
+                f = 0
+            }
+            e++
+            g = e
+            g = g - b
+        } while (g != 0)
+        d++
+        g = d
+        g = g - b
+    } while(g != 0)
+    if f == 0 {
+        h++
+    }
+    g = b
+    g = g - c
+    if g == 0 {
+        END
+    }
+    b = b - 17
+}
