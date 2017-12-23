@@ -1,9 +1,6 @@
-b = 108400
-c = 125400
 
-do 1000 times {
+for b = 108400 -> 125400 step 17 {
     
-    if b is prime -> h++
+    if b is no prime -> h++
 
-    b += 17
 }
